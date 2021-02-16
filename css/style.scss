@@ -1,0 +1,139 @@
+$bgcolor: rgb(216, 219, 224);
+$primaryColor : rgb(26, 26, 37);
+$secondaryColor : #ccc5c5;
+$btnColor1 : rgb(57, 192, 129);
+$btnColor2 : rgb(226, 88, 100);
+$specialColor : rgb(204, 69, 69);
+$roundness : 15px;
+$gradientColor1: rgb(49, 49, 75);
+$gradientColor2: rgb(24, 25, 29);
+$font: 'M PLUS Rounded 1c', sans-serif;
+$depth : 20px;
+$roundness : 20px;
+$height: 500px;
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,html{
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: $font;
+}
+
+body {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bgcolor;
+}
+
+.calculator {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primaryColor;
+  background-image: linear-gradient($gradientColor1, $gradientColor2);
+  box-sizing: border-box;
+  height: 500px;
+  min-width: 250px;
+  
+  border-radius: $roundness;
+  overflow: hidden;
+  box-shadow: 1px 1px 10px 2px #2c2c2c;
+}
+.calculator__screen{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0 20px;
+  flex-shrink: 0;
+  width: 100%;
+  height: 30%;
+  color: $secondaryColor;
+  .operator {
+    color: $btnColor2;
+    font-size: 12px;
+    position: relative;
+    top: -2px;
+  }
+  h2 {
+    font-size: 33px;
+  }
+  h3 {
+    font-size:  16px;
+  }
+  h6 {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+}
+
+.calculator__ui {
+  box-sizing: border-box;
+  display: grid;
+  
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  padding:  10px 10px 30px 10px;
+  border-radius: $roundness;
+  background-color: rgba(143, 143, 143, 0.123);
+  .btn {
+    font-weight: 700;
+    height: 44px;
+    min-width: 64px;
+    border-radius: 3px;
+    margin: 3px;
+    font-family: $font;
+    font-size: 17px;
+    border: 3px solid rgba(26, 32, 22, 0.382);
+    background-color: $primaryColor;
+    color: $secondaryColor;
+    border: none;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.301);
+  }
+  .btn:hover{
+    border: 3px solid rgba(168, 168, 168, 0.288);
+  }
+  .btn_type1 {
+    color: $btnColor1;
+    font-weight: 900;
+    
+  }
+  .btn_type1:hover {
+    border: 3px solid rgba(81, 194, 6, 0.288);
+  }
+
+  .btn_type2 {
+    color: $btnColor2;
+    font-weight: 900;
+  }
+  .btn_type2:hover {
+    border: 3px solid rgba(241, 75, 53, 0.5);
+  }
+  .btn_special {
+    background: $specialColor;
+  }
+}
+
+.hole {
+  position: absolute;
+  margin: 0 auto;
+  left: 25%;
+  bottom: 20px;
+  height: 4px;
+  width: 50%;
+  border-radius: 2px;
+  opacity: 0.3;
+  background-color: $secondaryColor;  
+}
