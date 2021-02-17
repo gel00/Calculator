@@ -8,4 +8,4 @@ To run the calculator, please open index.html or visit [my github page](https://
 
 ## Control
 
-In order to enter a value click on the desired button or yiu can use your keyboard.
+In order to enter a value click on the desired button or you can use your keyboard as well.
