@@ -43,7 +43,7 @@
         }
       }
     },
-    validKeys: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "Enter", "Backspace", "+", "-", "*", "/", ".", "Escape"],
+    validKeys: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "Enter", "Backspace", "+", "-", "*", "/", ".", "%", "+/-", "Escape"],
     savedNumbers: ["", ""],
     input: {
       value: "",
@@ -78,6 +78,9 @@
 
         case "*":
           return a * b;
+
+        case "%":
+          return a % b;
       }
     },
     clear: function clear() {
@@ -112,6 +115,15 @@
           capp.display.h2.update(btn, bool);
           break;
 
+        case "+/-":
+          if (capp.input.value) {
+            var value = capp.input.value[0] === "-" ? capp.input.value.slice(1) : "-" + capp.input.value;
+            capp.input.value = value;
+            capp.display.h2.update(value, true);
+          }
+
+          break;
+
         case ".":
           console.log(capp.input.isFloat);
 
@@ -130,6 +142,7 @@
         case "-":
         case "*":
         case "/":
+        case "%":
           if (capp.input.value !== "") {
             console.log("not empty:" + capp.input.value !== ""); // input is not empty
 
