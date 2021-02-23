@@ -1,6 +1,7 @@
 "use strict";
 
 (function (global) {
+  // clock on the top left corner
   var clock = document.getElementById("clock");
 
   var setTime = function setTime() {
@@ -16,6 +17,16 @@
   setInterval(setTime, 6000);
   var capp = {
     display: {
+      //el : html node
+      //str: new value
+      //bool : add to or replace original
+      update: function update(el, str, bool) {
+        if (bool) {
+          el.innerHTML = str;
+        } else {
+          el.innerHTML += str;
+        }
+      },
       h2: {
         el: document.getElementById("result"),
         update: function update() {
@@ -287,4 +298,5 @@
       controller(_btn);
     }
   });
+  window.app = capp;
 })(window);
