@@ -1,5 +1,5 @@
 (global => {
-  // clock on the top left corner
+
   const clock = document.getElementById("clock");
   const setTime = () => {
     let d = new Date();
@@ -11,32 +11,30 @@
   }
   setTime();
   setInterval(setTime, 6000);
-
-
   const capp = {
     display: {
-      //el : html node
-      //str: new value
-      //bool : add to or replace original
-      update(el, str, bool) {
-        if (bool) {
-          el.innerHTML = str;
-        } else {
-          el.innerHTML += str;
+
+      h2: {
+        el: document.getElementById("result"),
+        update: (str = "0", clear = false) => {
+          if (clear) {
+            capp.display.h2.el.innerHTML = str;
+          } else {
+            capp.display.h2.el.innerHTML += str;
+          }
         }
       },
-      setTime() {
-        let d = new Date();
-        let hh = d.getHours() + "";
-        let mm = d.getMinutes() + "";
-        hh = hh.length === 2 ? hh : 0 + hh;
-        mm = mm.length === 2 ? mm : 0 + mm;
-        clock.innerHTML = hh + ":" + mm;
-      },
-      setClockInterval = setInterval(setTime, 6000);
-      clock: document.getElementById("clock"),
-      input: document.getElementById("input"),
-      operation: document.getElementById("operation"),
+      h3: {
+        el: document.getElementById("operation"),
+        update: (str = "", clear = false) => {
+          if (clear) {
+            capp.display.h3.el.innerHTML = str;
+          } else {
+            capp.display.h3.el.innerHTML += str;
+          }
+
+        }
+
       }
     },
 
@@ -271,5 +269,5 @@
     }
     
   });
-window.app = capp;
+
 })(window)
